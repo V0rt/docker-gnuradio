@@ -1,11 +1,13 @@
 Gnuradio + UHD docker compose projects
 
+```bash
 docker-compose build
 docker-compose up -d
 
 docker exec -it gr37 bash
 docker attach gr37
 docker exec gr37 gnuradio-companion
+```
 
 gr37
 companion 3.7.13.5
