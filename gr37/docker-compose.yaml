@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    container_name: gr37
+    network_mode: "host"
+    environment:
+      - DISPLAY
+    volumes:
+      - "/home/user/.Xauthority:/root/.Xauthority:rw"
+      - "/dev/bus/usb:/dev/bus/usb"
+      - "/home/user/git:/home/user/git"
+      - "/home/user/github:/home/user/github"
+      - "/mnt/WD2T:/mnt/WD2T"
+      - "/mnt/ramdisk:/mnt/ramdisk"
+    devices:
+      - "/dev/snd"
+    group_add:
+      - "audio"
+    privileged: true
+    stdin_open: true
+    restart: unless-stopped
+    tty: true
